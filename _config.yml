@@ -1,0 +1,14 @@
+title: OnePlus 3 LineageOS 22.2
+description: Unofficial LineageOS 22.2 (Android 15) port for the OnePlus 3 (oneplus3, A3003). In development, not released.
+baseurl: /op3-lineage
+url: https://codfx.github.io
+theme: minima
+minima:
+  skin: auto
+header_pages:
+  - known-issues.md
+  - changelog.md
+  - porting-notes.md
+exclude:
+  - README.md
+  - LICENSE
