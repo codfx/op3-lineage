@@ -10,11 +10,6 @@ build contains it. Every fix is also listed in the [Changelog](changelog.html).
 
 ## Investigating
 
-- **No deep sleep (standby battery drain).** The phone never completes a system suspend, so it
-  drains about 2-4 % per hour with the screen off. Cause found: the camera service waits forever
-  for a camera daemon that is parked for now, and a task in that state cannot be frozen, so every
-  suspend attempt stalls until something wakes the phone. A fix (a bounded, freezable wait, as in
-  the OnePlus 3.18 kernel) is in the next build and still has to be tested.
 - **VoLTE does not register.** Calls fall back to 2G and work normally; the IMS stack is running
   but not yet registering with the network.
 - **A PC USB port does not charge the phone.** The charger sees the cable but never switches
@@ -37,6 +32,11 @@ build contains it. Every fix is also listed in the [Changelog](changelog.html).
 
 ## In the current build
 
+- **Deep sleep works.** The camera service waited forever (uninterruptibly) for the camera daemon,
+  which is parked for now, so the phone could never be frozen for suspend and drained about 2-4 % per
+  hour with the screen off. The wait is now bounded and freezable, as in the OnePlus 3.18 kernel. In a
+  27-minute screen-off test on Wi-Fi the phone slept about 94 % of the time with no measurable battery
+  drop. (M3e)
 - **Wi-Fi no longer wakes the phone for every broadcast packet.** The Wi-Fi driver registered a
   wake-up for each received packet (about 3 per second on a home network), which stopped any
   deep sleep. (M3d)

@@ -31,7 +31,7 @@ blobs from the OnePlus 3's own 18.1 release.
 | Bluetooth | ❔ Not tested yet | |
 | USB (adb) | ✅ Works | adb may need a cable re-plug after a restart |
 | Charging | ⚠️ Partly | Wall charger works; a PC USB port does not charge |
-| Standby (deep sleep) | ❌ Not yet | The phone never enters deep sleep; cause found, fix in the next build |
+| Standby (deep sleep) | ✅ Works | About 94 % of idle time asleep with Wi-Fi on; no measurable drain in a 27-minute test (M3e) |
 | GPS, sensors | ❔ Not tested yet | |
 | Camera | ⏸ Parked | Disabled until the camera stage |
 | Fingerprint, NFC | ⏸ Parked | Disabled until their stages |

@@ -6,10 +6,11 @@ permalink: /changelog.html
 
 Test builds, newest first. None of them is released.
 
-## M3e (built, not yet tested)
+## M3e (current test build)
 
-- Deep sleep: the camera service's wait for the (parked) camera daemon is now bounded and
-  freezable, as in the OnePlus 3.18 kernel; it blocked every suspend.
+- Deep sleep works: the camera service's wait for the (parked) camera daemon is now bounded and
+  freezable, as in the OnePlus 3.18 kernel; it blocked every suspend. Tested: about 94 % of idle
+  time asleep on Wi-Fi, no measurable battery drop in 27 minutes.
 - Fuel-gauge update intervals back to stock (an earlier change in M3d turned out not to matter).
 
 ## M3d
