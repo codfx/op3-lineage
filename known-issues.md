@@ -15,11 +15,8 @@ build contains it. Every fix is also listed in the [Changelog](changelog.html).
 - **A PC USB port does not charge the phone.** The charger sees the cable but never switches
   charging on from a computer port; a wall charger works. The charger/USB handshake changed in
   the 4.4 kernel and is being compared with the 3.18 one.
-- **adb may need a cable re-plug after a restart** (the computer shows the phone as "offline").
-- **Slow SMS sending (being verified).** Once, after many hours of uptime, sending an SMS took
-  minutes or needed retries; after a radio restart it was instant. The radio daemon could not take
-  wake locks at the time (fixed in M3c); this is being re-checked once deep sleep works.
-
+- **adb may need a cable re-plug after a restart or after deep sleep** (the computer shows the phone as
+  "offline" or not at all).
 ## Parked (disabled on purpose until their stage)
 
 - **Camera**, **fingerprint**, **NFC**: disabled until their porting stages.
@@ -41,6 +38,7 @@ build contains it. Every fix is also listed in the [Changelog](changelog.html).
   wake-up for each received packet (about 3 per second on a home network), which stopped any
   deep sleep. (M3d)
 - **The radio daemon can take wake locks again.** On Android 15 its wake-lock requests went to
-  the wrong service manager and all failed. (M3c)
+  the wrong service manager and all failed. A slow-send state seen once before this fix did not
+  return: an SMS sent after deep sleep goes out in under a second. (M3c, verified on M3e)
 - **The radio starts.** Libraries of the radio stack picked up Android 15's own copies of shared
   libraries and failed to load; IMEI, baseband, LTE data, calls and SMS now work. (M3b)

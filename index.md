@@ -24,14 +24,14 @@ blobs from the OnePlus 3's own 18.1 release.
 | Headphones (3.5 mm) | ✅ Works | Including the headset volume buttons |
 | Mobile data (LTE) | ✅ Works | IPv4 and IPv6 |
 | Calls | ⚠️ Partly | Work over 2G (circuit-switched fallback from LTE); VoLTE does not register yet |
-| SMS | ✅ Works | Send and receive (multi-part too); a slow-send state is being verified |
+| SMS | ✅ Works | Send and receive (multi-part too); sends instantly also after deep sleep |
 | IMEI, baseband, dual SIM | ✅ Works | Both SIM slots detected |
 | Wi-Fi | ✅ Works | |
 | Wi-Fi hotspot | ✅ Works | |
 | Bluetooth | ❔ Not tested yet | |
-| USB (adb) | ✅ Works | adb may need a cable re-plug after a restart |
+| USB (adb) | ✅ Works | adb may need a cable re-plug after a restart or deep sleep |
 | Charging | ⚠️ Partly | Wall charger works; a PC USB port does not charge |
-| Standby (deep sleep) | ✅ Works | About 94 % of idle time asleep with Wi-Fi on; no measurable drain in a 27-minute test (M3e) |
+| Standby (deep sleep) | ✅ Works | About 92-94 % of idle time asleep with Wi-Fi on; no measurable drain in 27- and 31-minute tests; incoming Wi-Fi traffic wakes the phone (M3e) |
 | GPS, sensors | ❔ Not tested yet | |
 | Camera | ⏸ Parked | Disabled until the camera stage |
 | Fingerprint, NFC | ⏸ Parked | Disabled until their stages |
